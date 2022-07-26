@@ -1,0 +1,32 @@
+:root {
+  /* general */
+  --primary-dark: #262626;
+  --secondary-dark: #404040;
+  --primary-light: #e5e5e5;
+  --secondary-light: #a3a3a3;
+  /* project card */
+  --project-dark: #164e63;
+  --project-light: #0e7490;
+  --todo-dark: #67e8f9;
+  --todo-light: #ecfeff;
+}
+
+html {
+  font-size: 1rem;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+header,
+footer {
+ color: var(--primary-light);
+  background-color: var(--primary-dark);
+  text-align: center;
+  padding: 10px;
+  font-size: 2rem;
+}
