@@ -4,29 +4,125 @@
   --secondary-dark: #404040;
   --primary-light: #e5e5e5;
   --secondary-light: #a3a3a3;
-  /* project card */
-  --project-dark: #164e63;
-  --project-light: #0e7490;
-  --todo-dark: #67e8f9;
-  --todo-light: #ecfeff;
+  --blue-dark: #164e63;
+  --blue-light: #0e7490;
 }
 
-html {
+* {
   font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
 }
 
 body {
   min-height: 100vh;
-  margin: 0;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
 
-header,
-footer {
- color: var(--primary-light);
+header {
   background-color: var(--primary-dark);
-  text-align: center;
-  padding: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: var(--primary-light);
+  text-decoration: none;
+}
+
+.navbar {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.nav-branding {
   font-size: 2rem;
+}
+
+/* hover effect */
+.nav-link {
+  transition: 0.7s ease;
+}
+
+.nav-link:hover {
+  color: var(--blue-light);
+}
+
+/* hamburger menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--primary-light);
+}
+
+/* media query to display hamburger */
+@media(max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  /* makes middle bar of hamburger disappear when active */
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  /* rotates top and bottom to make the x */
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: var(--primary-dark);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+  
+  .nav-item {
+    margin: 16px 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+}
+
+
+
+
+footer {
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
+  font-size: 1.5rem;
+  padding: 10px;
+  text-align: center;
 }
