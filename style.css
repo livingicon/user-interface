@@ -1,5 +1,4 @@
 :root {
-  /* general */
   --primary-dark: #262626;
   --secondary-dark: #404040;
   --primary-light: #e5e5e5;
@@ -9,9 +8,10 @@
 }
 
 * {
-  font-size: 1rem;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 1rem;
   /* box-sizing: border-box; */
 }
 
@@ -116,8 +116,79 @@ a {
   }
 }
 
+.carousel {
+  align-items: center;
+  display: flex;
+  margin: 2rem auto;
+  overflow: hidden;
+  /* on both y and x axis */
+  position: relative;
+  /* to help position buttons */
+  width: 300px;
+}
 
+.carouselImg {
+  display: flex;
+  transform: translateX(0);
+  /* moves it left (x-axis) */
+  transition: transform 0.25s;
+  /* moves it at a certain speed */
+}
 
+img {
+  border-radius: 10px;
+  min-width: 300px;
+  min-height: 300px;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+#pic1 {
+  border: 5px solid red;
+}
+
+#pic2 {
+  border: 5px solid orange;
+}
+#pic3 {
+  border: 5px solid green;
+}
+#pic4 {
+  border: 5px solid blue;
+}
+#pic5 {
+  border: 5px solid purple;
+}
+
+.carouselBtn {
+  background: teal;
+  border: 0;
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 3rem;
+  width: 3rem;
+  opacity: 0.25;
+  position: absolute;
+  transition: opacity 0.25s;
+  z-index: 1;
+  /* so they are always on top of the image */
+}
+
+#previousBtn {
+  left: 5px;
+}
+
+#nextBtn {
+  right: 5px;
+}
+
+.carouselBtn:hover {
+  opacity: 0.5;
+  /* boosts opacity on hover */
+}
 
 footer {
   background-color: var(--primary-dark);
